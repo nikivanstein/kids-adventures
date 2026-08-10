@@ -8,6 +8,24 @@ const CONTENT_BASE = './content/worlds';
 
 const langEnum = z.enum(['nl', 'en']);
 
+// -- Home page intro --------------------------------------------------------
+
+const home = defineCollection({
+  loader: glob({
+    pattern: 'home.{nl,en}.md',
+    base: './content',
+    generateId: ({ entry }) => {
+      const match = entry.match(/^home\.(nl|en)\.md$/);
+      if (!match) throw new Error(`Unexpected home content path: ${entry}`);
+      return match[1] as string;
+    },
+  }),
+  schema: z.object({
+    lang: langEnum,
+    title: z.string(),
+  }),
+});
+
 function worldIdFromEntry(entry: string): string {
   // entry, e.g. "playmobil-funpark/world.yaml"
   return entry.split('/')[0];
@@ -166,6 +184,7 @@ const sessionContent = defineCollection({
 });
 
 export const collections = {
+  home,
   worlds,
   worldContent,
   campaigns,

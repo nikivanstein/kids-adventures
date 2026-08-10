@@ -38,6 +38,18 @@ export interface ResolvedSession {
   translated: boolean;
 }
 
+export interface ResolvedHome {
+  content: CollectionEntry<'home'>;
+  translated: boolean;
+}
+
+export async function getHome(lang: Lang): Promise<ResolvedHome | undefined> {
+  const entries = await getCollection('home');
+  const picked = pickTranslated(entries, lang);
+  if (!picked) return undefined;
+  return { content: picked.entry, translated: picked.translated };
+}
+
 export async function getWorlds(lang: Lang): Promise<ResolvedWorld[]> {
   const [metas, allContent] = await Promise.all([getCollection('worlds'), getCollection('worldContent')]);
   const resolved = metas
