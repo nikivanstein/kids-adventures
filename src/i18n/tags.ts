@@ -9,6 +9,7 @@ export const tagLabels: Record<string, Record<Lang, string>> = {
   'low-combat': { nl: 'Weinig geweld', en: 'Low combat' },
   courage: { nl: 'Moed', en: 'Courage' },
   choices: { nl: 'Eigen keuzes', en: 'Own choices' },
+  imagination: { nl: 'Fantasie', en: 'Imagination' },
 };
 
 export function tagLabel(tag: string, lang: Lang): string {

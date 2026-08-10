@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280">
+  <defs>
+    <pattern id="hatch" width="10" height="10" patternTransform="rotate(25)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="10" stroke="#26301F" stroke-width="1" opacity="0.06" />
+    </pattern>
+  </defs>
+  <rect width="400" height="280" fill="#F6F0DE" />
+  <rect width="400" height="280" fill="url(#hatch)" />
+  <rect x="1.5" y="1.5" width="397" height="277" fill="none" stroke="#C9BD93" stroke-width="3" />
+
+  <!-- jar -->
+  <path d="M172 118 L172 100 Q172 92 180 92 L220 92 Q228 92 228 100 L228 118
+           Q252 128 252 165 L252 205 Q252 218 239 218 L161 218 Q148 218 148 205
+           L148 165 Q148 128 172 118 Z"
+        fill="none" stroke="#3F5A38" stroke-width="3.5" stroke-linejoin="round" />
+  <line x1="148" y1="172" x2="252" y2="172" stroke="#3F5A38" stroke-width="2" opacity="0.5" />
+
+  <!-- tilted, ajar lid -->
+  <ellipse cx="214" cy="82" rx="34" ry="9" fill="#9C6E1E" transform="rotate(-14 214 82)" />
+
+  <!-- ribbon -->
+  <rect x="170" y="150" width="60" height="10" fill="#8A4433" opacity="0.75" />
+
+  <!-- sparkle -->
+  <path d="M282 66 L288 82 L304 88 L288 94 L282 110 L276 94 L260 88 L276 82 Z" fill="#9C6E1E" />
+</svg>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280">
+  <defs>
+    <pattern id="hatch" width="10" height="10" patternTransform="rotate(25)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="10" stroke="#26301F" stroke-width="1" opacity="0.06" />
+    </pattern>
+  </defs>
+  <rect width="400" height="280" fill="#F6F0DE" />
+  <rect width="400" height="280" fill="url(#hatch)" />
+  <rect x="1.5" y="1.5" width="397" height="277" fill="none" stroke="#C9BD93" stroke-width="3" />
+
+  <!-- gate arch -->
+  <path d="M160 215 L160 150 Q200 110 240 150 L240 215"
+        fill="none" stroke="#3F5A38" stroke-width="6" stroke-linecap="round" />
+
+  <!-- three guardian shields -->
+  <g fill="#9C6E1E" stroke="#3F5A38" stroke-width="2.5">
+    <path d="M112 150 L132 150 L132 178 L122 194 L112 178 Z" />
+    <path d="M190 96 L210 96 L210 124 L200 140 L190 124 Z" />
+    <path d="M268 150 L288 150 L288 178 L278 194 L268 178 Z" />
+  </g>
+</svg>

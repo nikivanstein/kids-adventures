@@ -19,7 +19,7 @@ export const ui = {
     languageSwitchLabel: 'English',
     minutes: 'minuten',
     yearsOld: 'jaar',
-    home: 'Home',
+    journalStamp: 'Logboek',
   },
   en: {
     siteTitle: 'Kids Adventures',
@@ -39,7 +39,7 @@ export const ui = {
     languageSwitchLabel: 'Nederlands',
     minutes: 'minutes',
     yearsOld: 'years old',
-    home: 'Home',
+    journalStamp: 'Field log',
   },
 } as const;
 

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280">
+  <defs>
+    <pattern id="hatch" width="10" height="10" patternTransform="rotate(25)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="10" stroke="#26301F" stroke-width="1" opacity="0.06" />
+    </pattern>
+  </defs>
+  <rect width="400" height="280" fill="#F6F0DE" />
+  <rect width="400" height="280" fill="url(#hatch)" />
+  <rect x="1.5" y="1.5" width="397" height="277" fill="none" stroke="#C9BD93" stroke-width="3" />
+
+  <!-- waves -->
+  <path d="M70 205 Q100 195 130 205 T190 205 T250 205 T310 205 T370 205"
+        fill="none" stroke="#2B5E52" stroke-width="3" stroke-linecap="round" />
+  <path d="M60 220 Q90 210 120 220 T180 220 T240 220 T300 220 T360 220"
+        fill="none" stroke="#2B5E52" stroke-width="2" opacity="0.5" stroke-linecap="round" />
+
+  <!-- hull -->
+  <path d="M110 195 L290 195 L262 225 L138 225 Z" fill="#3F5A38" opacity="0.16" stroke="#3F5A38" stroke-width="3.5" stroke-linejoin="round" />
+
+  <!-- mast + sail -->
+  <line x1="200" y1="70" x2="200" y2="195" stroke="#8A4433" stroke-width="4" />
+  <path d="M204 84 L204 150 Q250 140 250 112 Q250 90 204 84 Z" fill="#FBF6E4" stroke="#3F5A38" stroke-width="2.5" />
+
+  <!-- flag -->
+  <path d="M200 70 L200 52 L224 61 Z" fill="#8A4433" />
+</svg>

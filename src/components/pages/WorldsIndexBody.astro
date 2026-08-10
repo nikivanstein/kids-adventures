@@ -20,6 +20,7 @@ const Content = home ? (await render(home.content)).Content : undefined;
   {home && (
     <section class="home-intro">
       {!home.translated && <TranslationBanner lang={lang} />}
+      <p class="jr-stamp">{strings.journalStamp}</p>
       <h1>{home.content.data.title}</h1>
       {Content && <Content />}
     </section>

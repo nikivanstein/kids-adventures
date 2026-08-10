@@ -1,0 +1,39 @@
+slug: 01-de-drie-wachters-van-de-poort
+world: ridderkasteel
+campaign: de-verloren-drakenkroon
+order: 1
+durationMinutes:
+  min: 20
+  max: 30
+minAge: 4
+maxAge: 8
+players:
+  - role:
+      nl: de Ridder
+      en: the Knight
+    age: 6
+    note:
+      nl: spreekt de wachters aan
+      en: speaks to the guardians
+  - role:
+      nl: de Schildknaap
+      en: the Squire
+    age: 4
+    note:
+      nl: draagt en kiest het juiste voorwerp
+      en: carries and chooses the right item
+materials:
+  - icon: "🛡️"
+    nl: schildje
+    en: little shield
+  - icon: "🕯️"
+    nl: kaarsje
+    en: candle
+  - icon: "📯"
+    nl: hoorn
+    en: horn
+tags:
+  - choices
+  - courage
+  - imagination
+cover: /images/worlds/ridderkasteel/campaigns/de-verloren-drakenkroon/sessions/01-de-drie-wachters-van-de-poort/cover.svg

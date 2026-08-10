@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280">
+  <defs>
+    <pattern id="hatch" width="10" height="10" patternTransform="rotate(25)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="10" stroke="#26301F" stroke-width="1" opacity="0.06" />
+    </pattern>
+  </defs>
+  <rect width="400" height="280" fill="#F6F0DE" />
+  <rect width="400" height="280" fill="url(#hatch)" />
+  <rect x="1.5" y="1.5" width="397" height="277" fill="none" stroke="#C9BD93" stroke-width="3" />
+
+  <!-- captain's hat -->
+  <path d="M140 130 Q200 90 260 130 Q280 138 260 150 L140 150 Q120 138 140 130 Z"
+        fill="#3F5A38" opacity="0.16" stroke="#3F5A38" stroke-width="3.5" stroke-linejoin="round" />
+  <path d="M155 140 Q200 122 245 140" fill="none" stroke="#9C6E1E" stroke-width="3" />
+  <path d="M188 128 L200 116 L212 128 Z" fill="#9C6E1E" />
+
+  <!-- hook -->
+  <path d="M150 175 L150 220 Q150 240 172 240 Q188 240 188 224"
+        fill="none" stroke="#8A4433" stroke-width="7" stroke-linecap="round" />
+</svg>

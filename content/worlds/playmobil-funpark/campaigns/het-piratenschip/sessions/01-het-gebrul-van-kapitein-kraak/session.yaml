@@ -1,0 +1,36 @@
+slug: 01-het-gebrul-van-kapitein-kraak
+world: playmobil-funpark
+campaign: het-piratenschip
+order: 1
+durationMinutes:
+  min: 20
+  max: 30
+minAge: 4
+maxAge: 8
+players:
+  - role:
+      nl: de Stuurman
+      en: the Navigator
+    age: 6
+    note:
+      nl: bepaalt welke kant het schip op vaart
+      en: decides which way the ship sails
+  - role:
+      nl: de Bootswerker
+      en: the Deckhand
+    age: 4
+    note:
+      nl: lost de klusjes aan boord op
+      en: solves the odd jobs on board
+materials:
+  - icon: "🪢"
+    nl: touw
+    en: rope
+  - icon: "🥁"
+    nl: trommel (of pan als trommel)
+    en: drum (or a pan as a drum)
+tags:
+  - teamwork
+  - imagination
+  - courage
+cover: /images/worlds/playmobil-funpark/campaigns/het-piratenschip/sessions/01-het-gebrul-van-kapitein-kraak/cover.svg

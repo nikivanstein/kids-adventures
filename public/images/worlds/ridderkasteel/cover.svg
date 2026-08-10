@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280">
+  <defs>
+    <pattern id="hatch" width="10" height="10" patternTransform="rotate(25)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="10" stroke="#26301F" stroke-width="1" opacity="0.06" />
+    </pattern>
+  </defs>
+  <rect width="400" height="280" fill="#F6F0DE" />
+  <rect width="400" height="280" fill="url(#hatch)" />
+  <rect x="1.5" y="1.5" width="397" height="277" fill="none" stroke="#C9BD93" stroke-width="3" />
+
+  <!-- left tower -->
+  <rect x="110" y="120" width="50" height="90" fill="#3F5A38" opacity="0.16" stroke="#3F5A38" stroke-width="3" />
+  <path d="M104 120 L110 100 L124 116 L136 96 L150 116 L160 100 L166 120 Z" fill="#3F5A38" />
+
+  <!-- right tower -->
+  <rect x="240" y="120" width="50" height="90" fill="#3F5A38" opacity="0.16" stroke="#3F5A38" stroke-width="3" />
+  <path d="M234 120 L240 100 L254 116 L266 96 L280 116 L290 100 L296 120 Z" fill="#3F5A38" />
+
+  <!-- curtain wall + gate -->
+  <rect x="160" y="150" width="80" height="60" fill="#3F5A38" opacity="0.1" stroke="#3F5A38" stroke-width="3" />
+  <path d="M186 210 L186 175 Q200 162 214 175 L214 210 Z" fill="#9C6E1E" />
+</svg>
