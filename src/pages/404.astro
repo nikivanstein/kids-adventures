@@ -1,0 +1,22 @@
+---
+import '../styles/global.css';
+import { homePath } from '../lib/content';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Not found · Kids Adventures</title>
+    <link rel="icon" href={`${import.meta.env.BASE_URL}favicon.svg`} />
+  </head>
+  <body>
+    <main style="text-align:center; padding-top: 4rem;">
+      <h1>404 — Page not found / Pagina niet gevonden</h1>
+      <p style="display:flex; gap:1.5rem; justify-content:center; margin-top:2rem;">
+        <a class="lang-switch" href={homePath('nl')}>Nederlands</a>
+        <a class="lang-switch" href={homePath('en')}>English</a>
+      </p>
+    </main>
+  </body>
+</html>

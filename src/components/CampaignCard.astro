@@ -1,0 +1,21 @@
+---
+import { campaignPath, assetPath, type ResolvedCampaign, type Lang } from '../lib/content';
+
+interface Props {
+  campaign: ResolvedCampaign;
+  worldSlug: string;
+  lang: Lang;
+}
+
+const { campaign, worldSlug, lang } = Astro.props;
+const cover = campaign.meta.data.cover;
+const style = cover ? `background-image: url(${JSON.stringify(assetPath(cover))})` : undefined;
+---
+
+<a class="card" href={campaignPath(lang, worldSlug, campaign.meta.data.slug)}>
+  <div class="card-cover" style={style}></div>
+  <div class="card-body">
+    <h3>{campaign.content.data.title}</h3>
+    {campaign.content.data.summary && <p>{campaign.content.data.summary}</p>}
+  </div>
+</a>

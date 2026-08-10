@@ -1,0 +1,52 @@
+---
+import SessionLayout from '../../layouts/SessionLayout.astro';
+import TranslationBanner from '../TranslationBanner.astro';
+import { t } from '../../i18n/ui';
+import {
+  getWorld,
+  getCampaign,
+  getSession,
+  render,
+  worldPath,
+  campaignPath,
+  sessionPath,
+  homePath,
+  otherLang,
+  type Lang,
+} from '../../lib/content';
+
+interface Props {
+  lang: Lang;
+  worldSlug: string;
+  campaignSlug: string;
+  sessionSlug: string;
+}
+
+const { lang, worldSlug, campaignSlug, sessionSlug } = Astro.props;
+const strings = t(lang);
+const world = await getWorld(worldSlug, lang);
+const campaign = await getCampaign(worldSlug, campaignSlug, lang);
+const session = await getSession(worldSlug, campaignSlug, sessionSlug, lang);
+
+if (!world || !campaign || !session) {
+  return Astro.rewrite('/404');
+}
+
+const { Content } = await render(session.content);
+---
+
+<SessionLayout
+  lang={lang}
+  session={session}
+  altHref={sessionPath(otherLang(lang), worldSlug, campaignSlug, sessionSlug)}
+>
+  <Fragment slot="breadcrumb">
+    <p class="breadcrumb">
+      <a href={homePath(lang)}>{strings.nav.worlds}</a> ›
+      <a href={worldPath(lang, worldSlug)}>{world.content.data.title}</a> ›
+      <a href={campaignPath(lang, worldSlug, campaignSlug)}>{campaign.content.data.title}</a>
+    </p>
+  </Fragment>
+  <Fragment slot="banner">{!session.translated && <TranslationBanner lang={lang} />}</Fragment>
+  <Content />
+</SessionLayout>

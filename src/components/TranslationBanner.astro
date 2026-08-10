@@ -1,0 +1,13 @@
+---
+import { t } from '../i18n/ui';
+import type { Lang } from '../lib/content';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const strings = t(lang);
+---
+
+<p class="translation-banner">{strings.translationBanner}</p>

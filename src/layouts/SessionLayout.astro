@@ -1,0 +1,64 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import MaterialsList from '../components/MaterialsList.astro';
+import { t } from '../i18n/ui';
+import { tagLabel } from '../i18n/tags';
+import type { Lang, ResolvedSession } from '../lib/content';
+
+interface Props {
+  lang: Lang;
+  session: ResolvedSession;
+  altHref?: string;
+}
+
+const { lang, session, altHref } = Astro.props;
+const strings = t(lang);
+const { min, max } = session.meta.data.durationMinutes;
+---
+
+<BaseLayout
+  lang={lang}
+  title={session.content.data.title}
+  description={session.content.data.summary}
+  altHref={altHref}
+>
+  <slot name="breadcrumb" />
+
+  <slot name="banner" />
+
+  <h1>{session.content.data.title}</h1>
+  {session.content.data.summary && <p class="tagline">{session.content.data.summary}</p>}
+
+  <button class="print-button" onclick="window.print()">🖨️ {strings.session.print}</button>
+
+  <section class="session-meta">
+    <div class="meta-item">
+      <strong>{strings.session.duration}</strong>
+      {min}–{max} {strings.minutes}
+    </div>
+    <div class="meta-item">
+      <strong>{strings.session.age}</strong>
+      {session.meta.data.minAge}–{session.meta.data.maxAge} {strings.yearsOld}
+    </div>
+    <div class="meta-item">
+      <strong>{strings.session.players}</strong>
+      {session.meta.data.players.map((p) => p.role[lang]).join(', ')}
+    </div>
+    <div class="meta-item">
+      <strong>{strings.session.materials}</strong>
+      <MaterialsList materials={session.meta.data.materials} lang={lang} />
+    </div>
+  </section>
+
+  {session.meta.data.tags.length > 0 && (
+    <ul class="tag-list">
+      {session.meta.data.tags.map((tag) => (
+        <li>{tagLabel(tag, lang)}</li>
+      ))}
+    </ul>
+  )}
+
+  <article class="session-body">
+    <slot />
+  </article>
+</BaseLayout>

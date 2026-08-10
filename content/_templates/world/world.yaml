@@ -1,0 +1,12 @@
+# Copy this whole `_templates/world` folder to `content/worlds/<world-slug>`
+# and rename it to your world's slug (lowercase, hyphens, e.g. "piraten-eiland").
+#
+# `slug` MUST match the folder name exactly.
+slug: your-world-slug
+# Optional hex color used as an accent on the world's page. Remove if unsure.
+accentColor: "#e07a1f"
+# Controls ordering on the worlds overview page. Lower numbers come first.
+order: 99
+# Optional cover image. Put the image file in /public/images/... and
+# reference its site-root path here, e.g. /images/worlds/your-world-slug/cover.jpg
+# cover: /images/worlds/your-world-slug/cover.jpg

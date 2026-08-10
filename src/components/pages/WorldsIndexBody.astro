@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import WorldCard from '../WorldCard.astro';
+import { t } from '../../i18n/ui';
+import { getWorlds, homePath, otherLang, type Lang } from '../../lib/content';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const strings = t(lang);
+const worlds = await getWorlds(lang);
+---
+
+<BaseLayout lang={lang} title={strings.nav.worlds} altHref={homePath(otherLang(lang))}>
+  <h1>{strings.nav.worlds}</h1>
+  <p class="tagline">{strings.tagline}</p>
+  <ul class="card-grid">
+    {worlds.map((world) => (
+      <li>
+        <WorldCard world={world} lang={lang} />
+      </li>
+    ))}
+  </ul>
+</BaseLayout>

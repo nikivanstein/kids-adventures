@@ -1,0 +1,13 @@
+---
+import SessionDetailBody from '../../../../../components/pages/SessionDetailBody.astro';
+import { sessionParams } from '../../../../../lib/content';
+
+export async function getStaticPaths() {
+  const params = await sessionParams();
+  return params.map((p) => ({ params: p }));
+}
+
+const { world, campaign, session } = Astro.params;
+---
+
+<SessionDetailBody lang="en" worldSlug={world} campaignSlug={campaign} sessionSlug={session} />

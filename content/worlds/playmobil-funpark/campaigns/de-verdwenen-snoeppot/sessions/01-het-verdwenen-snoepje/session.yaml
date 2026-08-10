@@ -1,0 +1,43 @@
+slug: 01-het-verdwenen-snoepje
+world: playmobil-funpark
+campaign: de-verdwenen-snoeppot
+order: 1
+durationMinutes:
+  min: 20
+  max: 30
+minAge: 3
+maxAge: 6
+players:
+  - role:
+      nl: de Ontdekker
+      en: the Explorer
+    age: 6
+    note:
+      nl: kiest steeds het juiste gereedschap
+      en: always picks the right tool
+  - role:
+      nl: de Speurder
+      en: the Tracker
+    age: 3
+    note:
+      nl: ontdekt zelf waar het spoor naartoe gaat
+      en: figures out where the trail leads
+materials:
+  - icon: "🗡️"
+    nl: zwaardje
+    en: little sword
+  - icon: "🪢"
+    nl: touw
+    en: rope
+  - icon: "🔦"
+    nl: lichtje
+    en: light
+  - icon: "🥄"
+    nl: schepje
+    en: shovel
+tags:
+  - counting
+  - teamwork
+  - low-combat
+  - choices
+  - courage

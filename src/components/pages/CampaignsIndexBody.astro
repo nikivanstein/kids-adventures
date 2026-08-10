@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CampaignCard from '../CampaignCard.astro';
+import TranslationBanner from '../TranslationBanner.astro';
+import { t } from '../../i18n/ui';
+import { getWorld, getCampaigns, worldPath, homePath, otherLang, type Lang } from '../../lib/content';
+
+interface Props {
+  lang: Lang;
+  worldSlug: string;
+}
+
+const { lang, worldSlug } = Astro.props;
+const strings = t(lang);
+const world = await getWorld(worldSlug, lang);
+
+if (!world) {
+  return Astro.rewrite('/404');
+}
+
+const campaigns = await getCampaigns(worldSlug, lang);
+---
+
+<BaseLayout
+  lang={lang}
+  title={world.content.data.title}
+  description={world.content.data.summary}
+  altHref={worldPath(otherLang(lang), worldSlug)}
+>
+  <p class="breadcrumb"><a href={homePath(lang)}>{strings.nav.worlds}</a></p>
+  {!world.translated && <TranslationBanner lang={lang} />}
+  <h1>{world.content.data.title}</h1>
+  {world.content.data.summary && <p class="tagline">{world.content.data.summary}</p>}
+
+  <h2>{strings.world.campaigns}</h2>
+  <ul class="card-grid">
+    {campaigns.map((campaign) => (
+      <li>
+        <CampaignCard campaign={campaign} worldSlug={worldSlug} lang={lang} />
+      </li>
+    ))}
+  </ul>
+</BaseLayout>

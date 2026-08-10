@@ -1,0 +1,20 @@
+---
+import { worldPath, assetPath, type ResolvedWorld, type Lang } from '../lib/content';
+
+interface Props {
+  world: ResolvedWorld;
+  lang: Lang;
+}
+
+const { world, lang } = Astro.props;
+const cover = world.meta.data.cover;
+const style = cover ? `background-image: url(${JSON.stringify(assetPath(cover))})` : undefined;
+---
+
+<a class="card" href={worldPath(lang, world.meta.data.slug)}>
+  <div class="card-cover" style={style}></div>
+  <div class="card-body">
+    <h3>{world.content.data.title}</h3>
+    {world.content.data.summary && <p>{world.content.data.summary}</p>}
+  </div>
+</a>

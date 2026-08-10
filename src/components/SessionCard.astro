@@ -1,0 +1,28 @@
+---
+import { sessionPath, assetPath, type ResolvedSession, type Lang } from '../lib/content';
+import { t } from '../i18n/ui';
+
+interface Props {
+  session: ResolvedSession;
+  worldSlug: string;
+  campaignSlug: string;
+  lang: Lang;
+}
+
+const { session, worldSlug, campaignSlug, lang } = Astro.props;
+const strings = t(lang);
+const cover = session.meta.data.cover;
+const style = cover ? `background-image: url(${JSON.stringify(assetPath(cover))})` : undefined;
+const { min, max } = session.meta.data.durationMinutes;
+---
+
+<a class="card" href={sessionPath(lang, worldSlug, campaignSlug, session.meta.data.slug)}>
+  <div class="card-cover" style={style}></div>
+  <div class="card-body">
+    <h3>{session.content.data.title}</h3>
+    {session.content.data.summary && <p>{session.content.data.summary}</p>}
+    <p>
+      {min}–{max} {strings.minutes} · {session.meta.data.minAge}–{session.meta.data.maxAge} {strings.yearsOld}
+    </p>
+  </div>
+</a>

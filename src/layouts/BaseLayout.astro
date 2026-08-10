@@ -1,0 +1,42 @@
+---
+import '../styles/global.css';
+import { t } from '../i18n/ui';
+import { homePath, type Lang } from '../lib/content';
+import LanguageSwitcher from '../components/LanguageSwitcher.astro';
+
+interface Props {
+  lang: Lang;
+  title: string;
+  description?: string;
+  /** Path to the equivalent page in the other language, if known. */
+  altHref?: string;
+}
+
+const { lang, title, description, altHref } = Astro.props;
+const strings = t(lang);
+const pageTitle = `${title} · ${strings.siteTitle}`;
+---
+
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    {description && <meta name="description" content={description} />}
+    <link rel="icon" href={`${import.meta.env.BASE_URL}favicon.svg`} />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href={homePath(lang)}>🧸 {strings.siteTitle}</a>
+      <nav>
+        <LanguageSwitcher lang={lang} altHref={altHref} />
+      </nav>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <p>{strings.tagline}</p>
+    </footer>
+  </body>
+</html>

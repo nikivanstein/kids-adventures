@@ -1,0 +1,11 @@
+# Copy this whole `_templates/campaign` folder to
+# `content/worlds/<world-slug>/campaigns/<campaign-slug>` and rename it.
+#
+# `slug` MUST match the folder name exactly. `world` MUST match the parent
+# world's slug.
+slug: your-campaign-slug
+world: your-world-slug
+# Controls ordering within the world's campaign list. Lower numbers come first.
+order: 99
+# Optional cover image, same convention as world.yaml.
+# cover: /images/worlds/your-world-slug/campaigns/your-campaign-slug/cover.jpg

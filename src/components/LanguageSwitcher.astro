@@ -1,0 +1,19 @@
+---
+import { t } from '../i18n/ui';
+import { otherLang, homePath, type Lang } from '../lib/content';
+
+interface Props {
+  lang: Lang;
+  /** Path to the equivalent page in the other language. Falls back to that language's home page. */
+  altHref?: string;
+}
+
+const { lang, altHref } = Astro.props;
+const other = otherLang(lang);
+const strings = t(lang);
+const href = altHref ?? homePath(other);
+---
+
+<a class="lang-switch" href={href} hreflang={other}>
+  {strings.languageSwitchLabel}
+</a>
