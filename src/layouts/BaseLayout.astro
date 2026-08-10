@@ -27,7 +27,13 @@ const pageTitle = `${title} · ${strings.siteTitle}`;
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href={homePath(lang)}>🧸 {strings.siteTitle}</a>
+      <a class="brand" href={homePath(lang)}>
+        <svg class="compass-mark" width="22" height="22" viewBox="0 0 22 22" aria-hidden="true">
+          <circle cx="11" cy="11" r="9.5" fill="none" stroke="currentColor" stroke-width="1.6" />
+          <path d="M11 4.5 L13.2 11 L11 17.5 L8.8 11 Z" fill="currentColor" />
+        </svg>
+        {strings.siteTitle}
+      </a>
       <nav>
         <LanguageSwitcher lang={lang} altHref={altHref} />
       </nav>

@@ -1,10 +1,10 @@
-slug: 01-het-verdwenen-snoepje
+slug: 02-de-geheime-kaart
 world: playmobil-funpark
 campaign: de-verdwenen-snoeppot
-order: 1
+order: 2
 durationMinutes:
-  min: 20
-  max: 30
+  min: 15
+  max: 25
 minAge: 3
 maxAge: 6
 players:
@@ -29,16 +29,8 @@ materials:
   - icon: "🪢"
     nl: touw
     en: rope
-  - icon: "🔦"
-    nl: lichtje
-    en: light
-  - icon: "🥄"
-    nl: schepje
-    en: shovel
 tags:
-  - counting
   - teamwork
-  - low-combat
   - choices
-  - courage
-cover: /images/worlds/playmobil-funpark/campaigns/de-verdwenen-snoeppot/sessions/01-het-verdwenen-snoepje/cover.svg
+  - imagination
+cover: /images/worlds/playmobil-funpark/campaigns/de-verdwenen-snoeppot/sessions/02-de-geheime-kaart/cover.svg
