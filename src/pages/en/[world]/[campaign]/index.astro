@@ -1,0 +1,13 @@
+---
+import SessionsIndexBody from '../../../../components/pages/SessionsIndexBody.astro';
+import { campaignParams } from '../../../../lib/content';
+
+export async function getStaticPaths() {
+  const params = await campaignParams();
+  return params.map((p) => ({ params: p }));
+}
+
+const { world, campaign } = Astro.params;
+---
+
+<SessionsIndexBody lang="en" worldSlug={world} campaignSlug={campaign} />

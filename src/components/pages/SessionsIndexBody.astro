@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SessionCard from '../SessionCard.astro';
+import TranslationBanner from '../TranslationBanner.astro';
+import { t } from '../../i18n/ui';
+import {
+  getWorld,
+  getCampaign,
+  getSessions,
+  worldPath,
+  campaignPath,
+  homePath,
+  otherLang,
+  type Lang,
+} from '../../lib/content';
+
+interface Props {
+  lang: Lang;
+  worldSlug: string;
+  campaignSlug: string;
+}
+
+const { lang, worldSlug, campaignSlug } = Astro.props;
+const strings = t(lang);
+const world = await getWorld(worldSlug, lang);
+const campaign = await getCampaign(worldSlug, campaignSlug, lang);
+
+if (!world || !campaign) {
+  return Astro.rewrite('/404');
+}
+
+const sessions = await getSessions(worldSlug, campaignSlug, lang);
+---
+
+<BaseLayout
+  lang={lang}
+  title={campaign.content.data.title}
+  description={campaign.content.data.summary}
+  altHref={campaignPath(otherLang(lang), worldSlug, campaignSlug)}
+>
+  <p class="breadcrumb">
+    <a href={homePath(lang)}>{strings.nav.worlds}</a> ›
+    <a href={worldPath(lang, worldSlug)}>{world.content.data.title}</a>
+  </p>
+  {!campaign.translated && <TranslationBanner lang={lang} />}
+  <h1>{campaign.content.data.title}</h1>
+  {campaign.content.data.summary && <p class="tagline">{campaign.content.data.summary}</p>}
+
+  <h2>{strings.campaign.sessions}</h2>
+  <ul class="card-grid">
+    {sessions.map((session) => (
+      <li>
+        <SessionCard session={session} worldSlug={worldSlug} campaignSlug={campaignSlug} lang={lang} />
+      </li>
+    ))}
+  </ul>
+</BaseLayout>

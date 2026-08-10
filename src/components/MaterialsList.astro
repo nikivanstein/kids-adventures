@@ -1,0 +1,24 @@
+---
+import type { Lang } from '../lib/content';
+
+interface Material {
+  icon: string;
+  nl: string;
+  en: string;
+}
+
+interface Props {
+  materials: Material[];
+  lang: Lang;
+}
+
+const { materials, lang } = Astro.props;
+---
+
+<ul class="materials-list">
+  {materials.map((m) => (
+    <li>
+      <span aria-hidden="true">{m.icon}</span> {m[lang]}
+    </li>
+  ))}
+</ul>

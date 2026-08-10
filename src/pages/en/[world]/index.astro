@@ -1,0 +1,13 @@
+---
+import CampaignsIndexBody from '../../../components/pages/CampaignsIndexBody.astro';
+import { worldParams } from '../../../lib/content';
+
+export async function getStaticPaths() {
+  const params = await worldParams();
+  return params.map((p) => ({ params: p }));
+}
+
+const { world } = Astro.params;
+---
+
+<CampaignsIndexBody lang="en" worldSlug={world} />

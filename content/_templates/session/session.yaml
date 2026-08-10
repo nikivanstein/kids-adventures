@@ -1,0 +1,37 @@
+# Copy this whole `_templates/session` folder to
+# `content/worlds/<world-slug>/campaigns/<campaign-slug>/sessions/<NN-session-slug>`
+# and rename it. Prefix the folder with a two-digit number (01, 02, ...) so
+# sessions sort in play order even before you set `order` below.
+#
+# `slug` MUST match the folder name exactly. `world` and `campaign` MUST
+# match the parent world/campaign slugs.
+slug: NN-your-session-slug
+world: your-world-slug
+campaign: your-campaign-slug
+# Controls ordering within the campaign's session list. Lower numbers come first.
+order: 99
+durationMinutes:
+  min: 20
+  max: 30
+minAge: 4
+maxAge: 8
+# One entry per player role. Add or remove roles as needed for your adventure.
+players:
+  - role:
+      nl: de Rol-naam
+      en: the Role name
+    age: 6
+    note:
+      nl: wat deze rol doet in het verhaal
+      en: what this role does in the story
+# Physical items needed to play, with an emoji icon and a bilingual label.
+materials:
+  - icon: "🗺️"
+    nl: kaart
+    en: map
+# Tags MUST come from the shared vocabulary in src/i18n/tags.ts (add a new
+# key there first if you need a tag that doesn't exist yet).
+tags:
+  - teamwork
+# Optional cover image, same convention as world.yaml.
+# cover: /images/worlds/your-world-slug/campaigns/your-campaign-slug/sessions/NN-your-session-slug/cover.jpg
